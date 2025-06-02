@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin, Calendar, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Tripcard = ({trip}) => {
   
@@ -15,7 +16,7 @@ const Tripcard = ({trip}) => {
           {/* Card Image */}
           <div className="relative h-48 overflow-hidden">
             <img
-              src={trip.imageUrl}
+              src={trip.img}
               alt={trip.title}
               className="w-full h-full object-cover"
             />
@@ -48,9 +49,9 @@ const Tripcard = ({trip}) => {
             </div>
 
             {/* Action Button */}
-            <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-2.5 px-4 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25">
+            <Link to={`/trips/tripdetails/${trip.id}`} className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-medium py-2.5 px-4 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25">
               View Trip
-            </button>
+            </Link>
           </div>
         </div>
       </div>

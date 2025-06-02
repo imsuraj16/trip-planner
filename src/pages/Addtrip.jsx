@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { MapPin, Calendar, Users, Plane, Camera, Star } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Tripcontext } from "../context/TripContext";
+import {nanoid} from "nanoid"
 
 const AddTrip = () => {
   const {
@@ -14,11 +15,11 @@ const AddTrip = () => {
   const { trips, setTrips } = useContext(Tripcontext);
 
   const submitHandler = (trip) => {
+    data.id = nanoid()
     setTrips((prev) => [...prev, trip]);
     reset();
   };
 
-  console.log(trips);
   
 
   return (

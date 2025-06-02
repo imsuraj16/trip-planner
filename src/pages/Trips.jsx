@@ -5,7 +5,7 @@ import Tripcard from "../components/Tripcard";
 
 const Trips = () => {
   const { trips, setTrips } = useContext(Tripcontext);
-  console.log(trips);
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black p-4 relative overflow-hidden">
